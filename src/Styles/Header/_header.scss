@@ -1,0 +1,17 @@
+.header {
+    margin-left: 180px;
+    margin-top: 50px;
+
+    .name {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+        span {
+            color: $color-1;
+        }
+    }
+
+    .message {
+        font-size: 0.8em;
+        
+    }
+}

@@ -1,0 +1,29 @@
+.navigation-left {
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -25%);
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 30%;
+
+        li {
+            background-color: white;
+            height: 54px;
+            width: 54px;
+            border-radius: 6px;
+            color: $color-1;
+            font-size: 1.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 25px;
+            }
+        }
+    }
+}
