@@ -1,28 +1,27 @@
-// import axios from "axios";
-// import { useState, useEffect } from "react";
-// import { useNavigate, useParams } from "react-router-dom";
-// import Home from "./Pages/Home";
+import axios from "axios";
 
-// const CallApi = (userId) => {
-// 	const [mainData, setMainData] = useState(false);
-//   const navigate = useNavigate();
+const getActivities = (userId) => {
+	return axios
+		.get(`http://localhost:3000/user/${userId}/activity`)
+};
 
-// 	const { id } = useParams();
+const getMainData = (userId) => {
+	return axios.get(`http://localhost:3000/user/${userId}`)
+};
 
-// 	useEffect(() => {
-//     // eslint-disable-next-line eqeqeq
-//     if(id == 12 || id == 18) {
-//       const getData = () =>  {
-//         axios.get(`http://localhost:3000/user/${userId}`).then((res) => {
-//           setMainData(res.data);
-//       })}; getData() 
-//     } else {
-//       navigate("/404");
-//     }
-// 	}, [id, navigate, userId]);
+const getAverageSessions = (userId) => {
+	return axios
+		.get(`http://localhost:3000/user/${userId}/average-sessions`)
+		
+};
 
-  
-// };
+const getPerformanceData = (userId) => {
+	return axios
+		.get(`http://localhost:3000/user/${userId}/performance`)
+};
 
+const getAllDatas = (userId) => {
+    return Promise.all([getActivities(userId), getMainData(userId), getAverageSessions(userId), getPerformanceData(userId)])
+}
 
-// export default CallApi;
+export {getActivities, getMainData, getAverageSessions, getPerformanceData, getAllDatas};

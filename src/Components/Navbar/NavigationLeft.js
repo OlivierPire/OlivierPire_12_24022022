@@ -6,7 +6,7 @@ const NavigationLeft = () => {
     return (
         <div className='navigation-left'>
             <ul>
-                <li><img src="../img/group.png" alt="" /></li>
+                <li><img src="../../../img/Group.png" alt="" /></li>
                 <li><BiSwim /></li>
                 <li><IoMdBicycle /></li>
                 <li><IoMdFitness /></li>

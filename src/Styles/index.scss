@@ -6,4 +6,21 @@
 @import '../Styles/Navbar/logo';
 @import '../Styles/Navbar/copyright';
 @import '../Styles/Header/header';
-@import '../Styles/Graphics/activities'
+@import '../Styles/Graphics/activities';
+@import '../Styles/Graphics/keyData';
+@import '../Styles/Graphics/averageSessions';
+@import '../Styles/Graphics/performance';
+@import '../Styles/Graphics/score';
+@import './NotFound';
+
+.graphics {
+    display: grid;
+    height: 650px;
+    margin-left: 180px;
+    margin-right: 70px;
+    margin-top: 50px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}

@@ -2,6 +2,10 @@
     display: flex;
     justify-content: space-between;
     background-color: rgb(1%, 1%, 1%);
+    position: fixed;
+    top: 0;
     color: white;
     height: 91px;
+    width: 100%;
+    z-index: 10;
 }
