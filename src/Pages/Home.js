@@ -12,7 +12,13 @@ import Score from "../Components/Graphics/Score";
 import "../Styles/index.scss";
 import { getAllDatas } from "../CallApi";
 
-const Home = (access) => {
+/**
+ * This is the homepage, it retrieves the data with useEffect, verify specific paths, and display all components
+ * @param {any} access 
+ * @returns all components 
+ */
+
+const Home = (/** @type {{ access: any; }} */ access) => {
 	const [mainData, setMainData] = useState(false);
 	const [activityData, setActivityData] = useState(false);
 	const [averageSessions, setAverageSessions] = useState(false);
@@ -35,17 +41,31 @@ const Home = (access) => {
 		}
 	}, [id, navigate, userId]);
 
+	/**
+	 * This switch verify access, so if url match with the case, the page return the good elements
+	 */
+
 	switch(access.access) {
 		case 'activity' :
 		return (
-			<div className="graphics">
-				<Activities data={activityData} />
+			<div className="home">
+				<NavbarTop />
+				<NavbarLeft />
+				<Header data={mainData} />
+				<div className="graphics graph_alone">
+					<Activities data={activityData} />
+				</div>
 			</div>
 		)
 		case 'today-score' :
 		return (
-			<div className="graphics">
-				<Score data={mainData}/>
+			<div className="home">
+				<NavbarTop />
+				<NavbarLeft />
+				<Header data={mainData} />
+				<div className="graphics graph_alone">
+					<Score data={mainData}/>
+				</div>
 			</div>
 		)
 		case 'average-sessions' :

@@ -15,7 +15,7 @@
 
 .graphics {
     display: grid;
-    height: 650px;
+    height: 750px;
     margin-left: 180px;
     margin-right: 70px;
     margin-top: 50px;
@@ -23,4 +23,10 @@
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+}
+
+.graph_alone {
+    margin-top: 10px;
+    display: block;
+    height: 750px;
 }

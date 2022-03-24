@@ -2,6 +2,12 @@ import React from 'react';
 import { FaAppleAlt, FaFire, FaHamburger } from 'react-icons/fa'
 import { GiChickenLeg } from 'react-icons/gi'
 
+/**
+ * This component returns the principals data of the user
+ * @param {Object} data 
+ * @returns informations of user
+ */
+
 const KeyData = (data) => {
     const keyData = data.data ? data.data.data.keyData : ""
     

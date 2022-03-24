@@ -1,14 +1,21 @@
 import React from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
+
+/**
+ * This component returns a RadarChart graphic with user's performance
+ * @param {Object} data 
+ * @returns RadarChart
+ */
+
 const Performance = (data) => {
     const performanceData = data.data ? data.data.data.data : "";
     const kind = data.data ? data.data.data.kind : "";
-
+    
+    /**
+     * dataArray stock the useful elements of variable 'performanceData' and 'kind'
+     */
     let dataArray = [];
-
-    console.log(performanceData);
-    console.log(kind);
 
     if(performanceData) {
       for(let i in kind) {
@@ -26,13 +33,13 @@ const Performance = (data) => {
         )
       }
     }
-
+    // console.log(dataArray);
     return (
         <div className='performance'>
             <ResponsiveContainer width="100%" height="100%">
-                <RadarChart cx="50%" cy="50%" outerRadius="68%" data={dataArray} fill='white'>
-                    <PolarGrid radialLines={false}/>
-                    <PolarAngleAxis dataKey="label" fontSize={12}/>
+                <RadarChart cx="50%" cy="50%" outerRadius="60%" data={dataArray} fill='white'>
+                    <PolarGrid radialLines={false} />
+                    <PolarAngleAxis  dataKey="label" fontSize={12}/>
                     <Radar name="Mike" dataKey="value" fill="#FF0101" fillOpacity={0.7} /> 
                 </RadarChart>
             </ResponsiveContainer>

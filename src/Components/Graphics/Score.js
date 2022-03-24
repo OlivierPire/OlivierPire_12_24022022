@@ -1,11 +1,13 @@
 import React from 'react';
-import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
+import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
 
+/**
+ * This component returns a RadialBarChart graphic with user's score in percentage
+ * @param {Object} data 
+ * @returns a RadialBarChart
+ */
 const Score = (data) => {
-    // console.log(data);
     const score = data.data ? data.data.data : "";
-    console.log(score);
-    // console.log(score);
 
     let scoreArray = [
         {
@@ -19,8 +21,6 @@ const Score = (data) => {
         }
     ];
 
-    console.log(scoreArray);
-
     return (
         <div className='score'>
             <h2>Score</h2>            
@@ -30,8 +30,7 @@ const Score = (data) => {
                     <RadialBar
                         dataKey="uv"
                         cornerRadius={10}
-                    />
-                    
+                    />  
                 </RadialBarChart>
             </ResponsiveContainer>
         </div>

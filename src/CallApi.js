@@ -1,5 +1,11 @@
 import axios from "axios";
 
+/**
+ * Those axios get all datas of user and when all get is résolves getAllDatas play all function
+ * @param {any} userId 
+ * @returns all datas
+ */
+
 const getActivities = (userId) => {
 	return axios
 		.get(`http://localhost:3000/user/${userId}/activity`)

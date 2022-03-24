@@ -1,7 +1,25 @@
 .activities {
     background-color: #FBFBFB;
     border-radius: 5px;
-    border: 1px solid  black;
     grid-area: 1 / 1 / 4 / 4; 
-    margin: 0px 15px 15px 0px;
+    margin: 0px 35px 35px 0px;
+    position: relative;
+    height: 400px;
+
+    h2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 1.1em;
+        margin: 20px;
+    }
+
+    .tooltip {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        p {
+            margin: 5px;
+        }
+    }
 }
