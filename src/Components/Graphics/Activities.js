@@ -12,37 +12,36 @@ import {
 
 /**
  * This component display a BarChart graphic with user's daily activity
- * @param {Object} data 
+ * @param {Object} data
  * @returns BarChart
  */
 const Activities = (data) => {
-	console.log(data);
 	const activity = data.data ? data.data.data.sessions : "";
 	const legendStyle = {
 		position: "absolute",
 		top: "22px",
-		fontSize: '0.7em'
+		fontSize: "0.7em",
 	};
-	
-	const TooltipStyle = ({payload}) => {
-		if(payload && payload.length) {
-			return(
-				<div 
+
+	const TooltipStyle = ({ payload }) => {
+		if (payload && payload.length) {
+			return (
+				<div
 					className="tooltip"
 					style={{
 						background: "#E60000",
 						padding: "15px 5px",
-						color: "white"
-						}}>
-
+						color: "white",
+					}}
+				>
 					<p>{payload[0].value}kg</p>
 					<p>{payload[1].value}Kcal</p>
 				</div>
-			)
+			);
 		}
-		return null
-	}
-	// console.log(activity);
+		return null;
+	};
+
 	return (
 		<div className="activities">
 			<h2>Activité quotidienne</h2>
@@ -63,7 +62,7 @@ const Activities = (data) => {
 						padding={{ left: 12, right: 10 }}
 						tickSize={20}
 						tickLine={false}
-						tickFormatter={(number) => number +1}
+						tickFormatter={(number) => number + 1}
 					/>
 					<YAxis
 						tickLine={false}
@@ -72,22 +71,22 @@ const Activities = (data) => {
 						dataKey="kilogram"
 						domain={[60, 90]}
 						ticks={[60, 75, 90]}
-						yAxisId='rigth'
+						yAxisId="rigth"
 						scale="auto"
 						allowDataOverflow={false}
 						allowDecimals={false}
-						
 					/>
-					<YAxis dataKey="calories" hide scale="auto" yAxisId='left' />
-					<Tooltip content={<TooltipStyle payload={[activity]} />}/>
+					<YAxis dataKey="calories" hide scale="auto" yAxisId="left" />
+					<Tooltip content={<TooltipStyle payload={[activity]} />} />
 					<Legend
 						verticalAlign="top"
 						align="right"
+						// @ts-ignore
 						wrapperStyle={legendStyle}
 						iconType="circle"
 					/>
 					<Bar
-						yAxisId='rigth'
+						yAxisId="rigth"
 						dataKey="kilogram"
 						fill="#282D30"
 						radius={[3, 3, 0, 0]}
@@ -95,7 +94,7 @@ const Activities = (data) => {
 						name="Poids (kg)"
 					/>
 					<Bar
-						yAxisId='left'
+						yAxisId="left"
 						dataKey="calories"
 						fill="#E60000"
 						radius={[3, 3, 0, 0]}

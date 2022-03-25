@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Routes, Route, Navigate } from "react-router-dom";
 import React from "react";
 import Home from "./Pages/Home";

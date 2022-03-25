@@ -16,17 +16,20 @@
 .graphics {
     display: grid;
     height: 750px;
-    margin-left: 180px;
+    margin-left: 170px;
     margin-right: 70px;
     margin-top: 50px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+
+    @media screen and (max-width: 1370px) {
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
 
 .graph_alone {
     margin-top: 10px;
     display: block;
-    height: 750px;
 }

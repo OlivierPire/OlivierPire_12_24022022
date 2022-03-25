@@ -22,4 +22,8 @@
             margin: 5px;
         }
     }
+
+    @media screen and (max-width: 1370px) {
+        grid-area: 1 / 1 / 3 / 5;
+    }
 }

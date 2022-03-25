@@ -2,9 +2,10 @@
     grid-area: 4 / 3 / 6 / 4;
     background-color: #FBFBFB;
     border-radius: 5px;
-    margin: 0px 35px 0px 35px;
+    margin: 0px 35px 0px 0px;
     position: relative;
     z-index: -2;
+    height: 300px;
 
     h2 {
         position: absolute;
@@ -29,5 +30,9 @@
             font-size: 1.7em;
             font-weight: bold;
         }
+    }
+
+    @media screen and (max-width: 1370px) {
+        grid-area: 4 / 3 / 6 / 5;
     }
 }
