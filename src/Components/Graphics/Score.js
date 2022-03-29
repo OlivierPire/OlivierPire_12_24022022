@@ -1,11 +1,13 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
+import PropTypes from 'prop-types'
 
 /**
  * This component returns a RadialBarChart graphic with user's score in percentage
- * @param {Object} data
- * @returns a RadialBarChart
+ * @param {any} data main Data
+ * @returns { ReactElement } a RadialBarChart
  */
+
 const Score = (data) => {
 	const score = data.data ? data.data.data : "";
 
@@ -47,5 +49,9 @@ const Score = (data) => {
 		</div>
 	);
 };
+
+Score.propTypes = {
+	data: PropTypes.any.isRequired
+}
 
 export default Score;

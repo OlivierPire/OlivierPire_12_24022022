@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: CallApi.js</title>
+    <title>JSDoc: Source: App.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: CallApi.js</h1>
+    <h1 class="page-title">Source: App.js</h1>
 
     
 
@@ -26,85 +26,34 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import axios from "axios";
-import PropTypes from 'prop-types'
+            <pre class="prettyprint source linenums"><code>// @ts-nocheck
+import { Routes, Route, Navigate } from "react-router-dom";
+import React from "react";
+import Home from "./Pages/Home";
+import NotFound from "./Pages/NotFound";
 
 /**
- * The axios get activity data 
- * @param {any} userId user id
- * @returns activity data
+ * It is all paths to go to all pages
+ * @returns {Routes} all paths for pages 
  */
 
-const getActivities = (userId) => {
-	return axios
-		.get(`http://localhost:3000/user/${userId}/activity`)
-};
-
-/**
- * The axios get main data 
- * @param {any} userId user id
- * @returns main data
- */
-
-const getMainData = (userId) => {
-	return axios.get(`http://localhost:3000/user/${userId}`)
-};
-
-/**
- * The axios get average sessions data 
- * @param {any} userId user id
- * @returns average sessions data
- */
-
-const getAverageSessions = (userId) => {
-	return axios
-		.get(`http://localhost:3000/user/${userId}/average-sessions`)
-		
-};
-
-/**
- * The axios get performance data 
- * @param {any} userId user id
- * @returns performance data
- */
-
-const getPerformanceData = (userId) => {
-	return axios
-		.get(`http://localhost:3000/user/${userId}/performance`)
-};
-
-/**
- * The promise checks that all data is resolved, and returns all functions with data
- * @param {any} userId user id
- * @returns all datas
- */
-
-const getAllDatas = (userId) => {
-    return Promise.all([getActivities(userId), getMainData(userId), getAverageSessions(userId), getPerformanceData(userId)])
+const App = () => {
+  
+  return (
+    &lt;Routes>
+      &lt;Route exact path="/user/:id" element={&lt;Home />} />
+      &lt;Route exact path="/user/:id/activity" element={&lt;Home access="activity" />} />
+      &lt;Route exact path="/user/:id/average-sessions" element={&lt;Home access="average-sessions" />} />
+      &lt;Route exact path="/user/:id/today-score" element={&lt;Home access="today-score" />} />
+      &lt;Route exact path="/user/:id/activities" element={&lt;Home access="activities" />} />
+      &lt;Route exact path="/user/:id/key-data" element={&lt;Home access="key-data" />} />
+      &lt;Route exact path="/" element={&lt;Navigate to="/user/18" />}/>
+      &lt;Route path='/*' element={&lt;NotFound />} />
+    &lt;/Routes>
+  );
 }
 
-getActivities.propTypes = {
-	data: PropTypes.any.isRequired
-}
-
-getMainData.propTypes = {
-	data: PropTypes.any.isRequired
-}
-
-getAverageSessions.propTypes = {
-	data: PropTypes.any.isRequired
-}
-
-getPerformanceData.propTypes = {
-	data: PropTypes.any.isRequired
-}
-
-getAllDatas.propTypes = {
-	data: PropTypes.any.isRequired
-}
-
-
-export {getActivities, getMainData, getAverageSessions, getPerformanceData, getAllDatas};
+export default App;
 </code></pre>
         </article>
     </section>

@@ -4,6 +4,11 @@ import React from "react";
 import Home from "./Pages/Home";
 import NotFound from "./Pages/NotFound";
 
+/**
+ * It is all paths to go to all pages
+ * @returns {Routes} all paths for pages 
+ */
+
 const App = () => {
   
   return (
@@ -14,7 +19,6 @@ const App = () => {
       <Route exact path="/user/:id/today-score" element={<Home access="today-score" />} />
       <Route exact path="/user/:id/activities" element={<Home access="activities" />} />
       <Route exact path="/user/:id/key-data" element={<Home access="key-data" />} />
-      
       <Route exact path="/" element={<Navigate to="/user/18" />}/>
       <Route path='/*' element={<NotFound />} />
     </Routes>

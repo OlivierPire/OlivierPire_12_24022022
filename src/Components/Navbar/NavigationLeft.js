@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { BiSwim } from 'react-icons/bi'
 import { IoMdFitness, IoMdBicycle } from 'react-icons/io'
+
+/**
+ * Show all icons in navigation left
+ * @returns { ReactElement | Object } icons
+ */
 
 const NavigationLeft = () => {
     return (

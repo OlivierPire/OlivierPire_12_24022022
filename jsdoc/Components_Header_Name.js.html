@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: CallApi.js</title>
+    <title>JSDoc: Source: Components/Header/Name.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: CallApi.js</h1>
+    <h1 class="page-title">Source: Components/Header/Name.js</h1>
 
     
 
@@ -26,86 +26,30 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import axios from "axios";
+            <pre class="prettyprint source linenums"><code>import React from 'react';
 import PropTypes from 'prop-types'
 
 /**
- * The axios get activity data 
- * @param {any} userId user id
- * @returns activity data
+ * Show "Bonjour" and the name of the user
+ * @param {any} data main data
+ * @returns {string} "Bonjour" + name
  */
 
-const getActivities = (userId) => {
-	return axios
-		.get(`http://localhost:3000/user/${userId}/activity`)
+const Name = (data) => {
+    const name = data.data ? data.data.data.userInfos.firstName : "";
+    // @ts-ignore
+    return (
+        &lt;div className='name'>
+            &lt;h1>Bonjour &lt;span>{name}&lt;/span>&lt;/h1>
+        &lt;/div>
+    );
 };
 
-/**
- * The axios get main data 
- * @param {any} userId user id
- * @returns main data
- */
-
-const getMainData = (userId) => {
-	return axios.get(`http://localhost:3000/user/${userId}`)
-};
-
-/**
- * The axios get average sessions data 
- * @param {any} userId user id
- * @returns average sessions data
- */
-
-const getAverageSessions = (userId) => {
-	return axios
-		.get(`http://localhost:3000/user/${userId}/average-sessions`)
-		
-};
-
-/**
- * The axios get performance data 
- * @param {any} userId user id
- * @returns performance data
- */
-
-const getPerformanceData = (userId) => {
-	return axios
-		.get(`http://localhost:3000/user/${userId}/performance`)
-};
-
-/**
- * The promise checks that all data is resolved, and returns all functions with data
- * @param {any} userId user id
- * @returns all datas
- */
-
-const getAllDatas = (userId) => {
-    return Promise.all([getActivities(userId), getMainData(userId), getAverageSessions(userId), getPerformanceData(userId)])
-}
-
-getActivities.propTypes = {
+Name.propTypes = {
 	data: PropTypes.any.isRequired
 }
 
-getMainData.propTypes = {
-	data: PropTypes.any.isRequired
-}
-
-getAverageSessions.propTypes = {
-	data: PropTypes.any.isRequired
-}
-
-getPerformanceData.propTypes = {
-	data: PropTypes.any.isRequired
-}
-
-getAllDatas.propTypes = {
-	data: PropTypes.any.isRequired
-}
-
-
-export {getActivities, getMainData, getAverageSessions, getPerformanceData, getAllDatas};
-</code></pre>
+export default Name;</code></pre>
         </article>
     </section>
 

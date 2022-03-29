@@ -1,4 +1,5 @@
-import React from "react";
+import React, { ReactElement } from "react";
+import PropTypes from 'prop-types'
 import {
 	BarChart,
 	Bar,
@@ -12,9 +13,10 @@ import {
 
 /**
  * This component display a BarChart graphic with user's daily activity
- * @param {Object} data
- * @returns BarChart
+ * @param {any} data activity data
+ * @returns {ReactElement} BarChart
  */
+
 const Activities = (data) => {
 	const activity = data.data ? data.data.data.sessions : "";
 	const legendStyle = {
@@ -23,8 +25,15 @@ const Activities = (data) => {
 		fontSize: "0.7em",
 	};
 
+	/**
+	 * This function allow change the style of graphic tooltip, payload corresponds to "activity"
+	 * @param {any} payload is "activity" variable
+	 * @returns { ReactElement | null} calories and weight with units or null
+	 */
+
 	const TooltipStyle = ({ payload }) => {
 		if (payload && payload.length) {
+			// @ts-ignore
 			return (
 				<div
 					className="tooltip"
@@ -57,7 +66,9 @@ const Activities = (data) => {
 						bottom: 15,
 					}}
 				>
-					<CartesianGrid strokeDasharray="3 1" vertical="" />
+					<CartesianGrid strokeDasharray="3 1" 
+					// @ts-ignore
+					vertical="" />
 					<XAxis
 						padding={{ left: 12, right: 10 }}
 						tickSize={20}
@@ -106,5 +117,9 @@ const Activities = (data) => {
 		</div>
 	);
 };
+
+Activities.propTypes = {
+	data: PropTypes.any.isRequired
+}
 
 export default Activities;

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { ReactElement } from "react";
+import PropTypes from 'prop-types'
 import {
 	Radar,
 	RadarChart,
@@ -9,8 +10,8 @@ import {
 
 /**
  * This component returns a RadarChart graphic with user's performance
- * @param {Object} data
- * @returns RadarChart
+ * @param {any} data performance data
+ * @returns { ReactElement } RadarChart
  */
 
 const Performance = (data) => {
@@ -18,8 +19,9 @@ const Performance = (data) => {
 	const kind = data.data ? data.data.data.kind : "";
 
 	/**
-	 * dataArray stock the useful elements of variable 'performanceData' and 'kind'
+	 * dataArray stock the useful elements of 'performanceData' and 'kind' varaiables
 	 */
+
 	let dataArray = [];
 	
 	if (performanceData) {
@@ -57,5 +59,9 @@ const Performance = (data) => {
 		</div>
 	);
 };
+
+Performance.propTypes = {
+	data: PropTypes.any.isRequired
+}
 
 export default Performance;

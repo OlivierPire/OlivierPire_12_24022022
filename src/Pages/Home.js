@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, ReactElement } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 // Components
 import NavbarTop from "../Components/Navbar/NavbarTop";
@@ -11,11 +11,12 @@ import Performance from "../Components/Graphics/Performance";
 import Score from "../Components/Graphics/Score";
 import "../Styles/index.scss";
 import { getAllDatas } from "../CallApi";
+import PropTypes from 'prop-types'
 
 /**
  * This is the homepage, it retrieves the data with useEffect, verify specific paths, and display all components
- * @param {any} access
- * @returns all components
+ * @param {any} access 
+ * @returns { ReactElement } all components
  */
 
 const Home = (access) => {
@@ -121,5 +122,9 @@ const Home = (access) => {
 			);
 	}
 };
+
+Home.propTypes = {
+	data: PropTypes.any
+}
 
 export default Home;

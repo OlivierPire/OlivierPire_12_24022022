@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: CallApi.js</title>
+    <title>JSDoc: Source: Components/Navbar/NavigationLeft.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: CallApi.js</h1>
+    <h1 class="page-title">Source: Components/Navbar/NavigationLeft.js</h1>
 
     
 
@@ -26,86 +26,29 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import axios from "axios";
-import PropTypes from 'prop-types'
+            <pre class="prettyprint source linenums"><code>import React, { ReactElement } from 'react';
+import { BiSwim } from 'react-icons/bi'
+import { IoMdFitness, IoMdBicycle } from 'react-icons/io'
 
 /**
- * The axios get activity data 
- * @param {any} userId user id
- * @returns activity data
+ * Show all icons in navigation left
+ * @returns { ReactElement | Object } icons
  */
 
-const getActivities = (userId) => {
-	return axios
-		.get(`http://localhost:3000/user/${userId}/activity`)
+const NavigationLeft = () => {
+    return (
+        &lt;div className='navigation-left'>
+            &lt;ul>
+                &lt;li>&lt;img src="../../../img/Group.png" alt="" />&lt;/li>
+                &lt;li>&lt;BiSwim />&lt;/li>
+                &lt;li>&lt;IoMdBicycle />&lt;/li>
+                &lt;li>&lt;IoMdFitness />&lt;/li>
+            &lt;/ul>
+        &lt;/div>
+    );
 };
 
-/**
- * The axios get main data 
- * @param {any} userId user id
- * @returns main data
- */
-
-const getMainData = (userId) => {
-	return axios.get(`http://localhost:3000/user/${userId}`)
-};
-
-/**
- * The axios get average sessions data 
- * @param {any} userId user id
- * @returns average sessions data
- */
-
-const getAverageSessions = (userId) => {
-	return axios
-		.get(`http://localhost:3000/user/${userId}/average-sessions`)
-		
-};
-
-/**
- * The axios get performance data 
- * @param {any} userId user id
- * @returns performance data
- */
-
-const getPerformanceData = (userId) => {
-	return axios
-		.get(`http://localhost:3000/user/${userId}/performance`)
-};
-
-/**
- * The promise checks that all data is resolved, and returns all functions with data
- * @param {any} userId user id
- * @returns all datas
- */
-
-const getAllDatas = (userId) => {
-    return Promise.all([getActivities(userId), getMainData(userId), getAverageSessions(userId), getPerformanceData(userId)])
-}
-
-getActivities.propTypes = {
-	data: PropTypes.any.isRequired
-}
-
-getMainData.propTypes = {
-	data: PropTypes.any.isRequired
-}
-
-getAverageSessions.propTypes = {
-	data: PropTypes.any.isRequired
-}
-
-getPerformanceData.propTypes = {
-	data: PropTypes.any.isRequired
-}
-
-getAllDatas.propTypes = {
-	data: PropTypes.any.isRequired
-}
-
-
-export {getActivities, getMainData, getAverageSessions, getPerformanceData, getAllDatas};
-</code></pre>
+export default NavigationLeft;</code></pre>
         </article>
     </section>
 

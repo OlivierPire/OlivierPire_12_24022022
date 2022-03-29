@@ -1,9 +1,9 @@
-import React from "react";
+import React, { ReactElement } from "react";
+import PropTypes from 'prop-types'
 import {
 	LineChart,
 	Line,
 	XAxis,
-	// CartesianGrid,
 	Tooltip,
 	ResponsiveContainer,
 	Legend,
@@ -11,8 +11,8 @@ import {
 
 /**
  * This components display a LineChart with user's average sessions
- * @param {Object} data
- * @returns LineChart
+ * @param {any} data average sessions data
+ * @returns { ReactElement } LineChart
  */
 
 const AverageSessions = (data) => {
@@ -24,9 +24,16 @@ const AverageSessions = (data) => {
 			</div>
 		);
 	};
+	
+	/**
+	 * This function allow change the style of graphic tooltip, and add a paragraph for time of sessions, payload corresponds to "averageSessions"
+	 * @param {any} payload is "averageSessions" variable
+	 * @returns { ReactElement | null } time of sessions with units (min)
+	 */
 
 	const TooltipStyle = ({ payload }) => {
 		if (payload && payload.length) {
+			// @ts-ignore
 			return (
 				<div
 					className="tooltip"
@@ -96,5 +103,10 @@ const AverageSessions = (data) => {
 		</div>
 	);
 };
+
+AverageSessions.propTypes = {
+	data: PropTypes.any.isRequired
+}
+
 
 export default AverageSessions;

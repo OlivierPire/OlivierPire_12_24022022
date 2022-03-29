@@ -1,6 +1,11 @@
 import React from 'react';
 
 const NavigationTop = () => {
+
+    /**
+     * The navigation
+     */
+
     return (
         <div className='navigation-top'>
             <ul>
