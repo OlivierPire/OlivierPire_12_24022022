@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import PropTypes from 'prop-types'
 import {
 	BarChart,
@@ -13,12 +13,12 @@ import {
 
 /**
  * This component display a BarChart graphic with user's daily activity
- * @param {any} data activity data
- * @returns {ReactElement} BarChart
+ * @param {object} data activity data
+ * @returns {React.ReactElement} BarChart
  */
 
 const Activities = (data) => {
-	const activity = data.data ? data.data.data.sessions : "";
+	const activity = data.data.data ? data.data.data.sessions : "";
 	const legendStyle = {
 		position: "absolute",
 		top: "22px",
@@ -119,7 +119,7 @@ const Activities = (data) => {
 };
 
 Activities.propTypes = {
-	data: PropTypes.any.isRequired
+	data: PropTypes.object.isRequired
 }
 
 export default Activities;

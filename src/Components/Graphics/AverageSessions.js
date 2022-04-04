@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import PropTypes from 'prop-types'
 import {
 	LineChart,
@@ -11,12 +11,12 @@ import {
 
 /**
  * This components display a LineChart with user's average sessions
- * @param {any} data average sessions data
- * @returns { ReactElement } LineChart
+ * @param {object} data average sessions data
+ * @returns { React.ReactElement } LineChart
  */
 
 const AverageSessions = (data) => {
-	const averageSessions = data.data ? data.data.data.sessions : "";
+	const averageSessions = data.data.data ? data.data.data.sessions : "";
 	const legend = () => {
 		return (
 			<div style={{ color: "white", margin: 20, marginBottom: 50, opacity: 0.7 }}>
@@ -54,14 +54,15 @@ const AverageSessions = (data) => {
 			<ResponsiveContainer width="100%" height="100%">
 				<LineChart
 					onMouseMove={(e) => {
+						// console.log(e);
 						if (e.isTooltipActive === true) {
 							let div = document.querySelector(".average-sessions");
 							let windowWidth = div.clientWidth;
-							let mouseXpercentage = Math.round(
+							let percentage = Math.round(
 								(e.activeCoordinate.x / windowWidth) * 100
 							);
 							// @ts-ignore
-							div.style.background = `linear-gradient(90deg, rgba(255,0,0,1) ${mouseXpercentage}%, rgba(175,0,0,1.5) ${mouseXpercentage}%, rgba(175,0,0,1.5) 100%)`;
+							div.style.background = `linear-gradient(90deg, rgba(255,0,0,1) ${percentage}%, rgba(175,0,0,1.5) ${percentage}%, rgba(175,0,0,1.5) 100%)`;
 						}
 					}}
 					width={500}
@@ -105,7 +106,7 @@ const AverageSessions = (data) => {
 };
 
 AverageSessions.propTypes = {
-	data: PropTypes.any.isRequired
+	data: PropTypes.object.isRequired
 }
 
 

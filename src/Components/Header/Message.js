@@ -2,7 +2,7 @@ import React from 'react';
 
 /**
  * Show encouragement message
- * @returns {string} encouragement message
+ * @returns encouragement message
  */
 
 const Message = () => {

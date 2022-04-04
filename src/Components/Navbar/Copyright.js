@@ -2,7 +2,7 @@ import React from 'react';
 
 /**
  * Show copyright of Sportsee
- * @returns { string } Copyright
+ * @returns Copyright
  */
 const Copyright = () => {
     // @ts-ignore

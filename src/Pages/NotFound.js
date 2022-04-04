@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
  * The not found page with a link to return to homepage
  * @returns {string} all text for the not found page and a link
  */
+
 const NotFound = () => {
     // @ts-ignore
     return (

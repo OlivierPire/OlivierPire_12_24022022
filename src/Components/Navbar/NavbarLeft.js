@@ -1,10 +1,10 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import NavigationLeft from "./NavigationLeft"
 import Copyright from "./Copyright"
 
 /**
  * Return NavigationLeft and Copyright
- * @returns { ReactElement } NavigationLeft and Copyright
+ * @returns { React.ReactElement } NavigationLeft and Copyright
  */
 const NavbarLeft = () => {
     return (

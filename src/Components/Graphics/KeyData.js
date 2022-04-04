@@ -1,16 +1,16 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { FaAppleAlt, FaFire, FaHamburger } from 'react-icons/fa'
 import { GiChickenLeg } from 'react-icons/gi'
 import PropTypes from 'prop-types'
 
 /**
  * This component returns the principals data of the user
- * @param {any} data main data
- * @returns { ReactElement | String} nutrient information of the user
+ * @param {object} data main data
+ * @returns { React.ReactElement | String} nutrient information of the user
  */
 
 const KeyData = (data) => {
-    const keyData = data.data ? data.data.data.keyData : ""
+    const keyData = data.data.data ? data.data.data.keyData : ""
     
     return (
         <div className='key-data'>
@@ -47,6 +47,6 @@ const KeyData = (data) => {
 };
 
 KeyData.propTypes = {
-	data: PropTypes.any.isRequired
+	data: PropTypes.object.isRequired
 }
 export default KeyData;

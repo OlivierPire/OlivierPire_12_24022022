@@ -1,6 +1,6 @@
-import React, { useEffect, useState, ReactElement } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-// Components
+
 import NavbarTop from "../Components/Navbar/NavbarTop";
 import NavbarLeft from "../Components/Navbar/NavbarLeft";
 import Header from "../Components/Header/Header";
@@ -16,14 +16,14 @@ import PropTypes from 'prop-types'
 /**
  * This is the homepage, it retrieves the data with useEffect, verify specific paths, and display all components
  * @param {any} access 
- * @returns { ReactElement } all components
+ * @returns { React.ReactElement } all components
  */
 
 const Home = (access) => {
-	const [mainData, setMainData] = useState(false);
-	const [activityData, setActivityData] = useState(false);
-	const [averageSessions, setAverageSessions] = useState(false);
-	const [performanceData, setPerformanceData] = useState(false);
+	const [mainData, setMainData] = useState({});
+	const [activityData, setActivityData] = useState({});
+	const [averageSessions, setAverageSessions] = useState({});
+	const [performanceData, setPerformanceData] = useState({});
 	const { id } = useParams();
 	const userId = id;
 	const navigate = useNavigate();
@@ -124,7 +124,7 @@ const Home = (access) => {
 };
 
 Home.propTypes = {
-	data: PropTypes.any
+	data: PropTypes.object
 }
 
 export default Home;

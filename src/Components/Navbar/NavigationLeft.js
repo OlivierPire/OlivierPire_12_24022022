@@ -1,10 +1,10 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { BiSwim } from 'react-icons/bi'
 import { IoMdFitness, IoMdBicycle } from 'react-icons/io'
 
 /**
  * Show all icons in navigation left
- * @returns { ReactElement | Object } icons
+ * @returns { React.ReactElement | Object } icons
  */
 
 const NavigationLeft = () => {

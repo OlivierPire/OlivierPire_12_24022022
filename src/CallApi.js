@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 /**
  * The axios get activity data 
- * @param {any} userId user id
+ * @param {string} userId user id
  * @returns activity data
  */
 
@@ -14,7 +14,7 @@ const getActivities = (userId) => {
 
 /**
  * The axios get main data 
- * @param {any} userId user id
+ * @param {string} userId user id
  * @returns main data
  */
 
@@ -24,7 +24,7 @@ const getMainData = (userId) => {
 
 /**
  * The axios get average sessions data 
- * @param {any} userId user id
+ * @param {string} userId user id
  * @returns average sessions data
  */
 
@@ -36,7 +36,7 @@ const getAverageSessions = (userId) => {
 
 /**
  * The axios get performance data 
- * @param {any} userId user id
+ * @param {string} userId user id
  * @returns performance data
  */
 
@@ -47,7 +47,7 @@ const getPerformanceData = (userId) => {
 
 /**
  * The promise checks that all data is resolved, and returns all functions with data
- * @param {any} userId user id
+ * @param {string} userId user id
  * @returns all datas
  */
 
@@ -56,23 +56,23 @@ const getAllDatas = (userId) => {
 }
 
 getActivities.propTypes = {
-	data: PropTypes.any.isRequired
+	userId: PropTypes.string.isRequired
 }
 
 getMainData.propTypes = {
-	data: PropTypes.any.isRequired
+	userId: PropTypes.string.isRequired
 }
 
 getAverageSessions.propTypes = {
-	data: PropTypes.any.isRequired
+	userId: PropTypes.string.isRequired
 }
 
 getPerformanceData.propTypes = {
-	data: PropTypes.any.isRequired
+	userId: PropTypes.string.isRequired
 }
 
 getAllDatas.propTypes = {
-	data: PropTypes.any.isRequired
+	userId: PropTypes.string.isRequired
 }
 
 

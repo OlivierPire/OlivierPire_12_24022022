@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import PropTypes from 'prop-types'
 import {
 	Radar,
@@ -10,13 +10,13 @@ import {
 
 /**
  * This component returns a RadarChart graphic with user's performance
- * @param {any} data performance data
- * @returns { ReactElement } RadarChart
+ * @param {object} data performance data
+ * @returns { React.ReactElement } RadarChart
  */
 
 const Performance = (data) => {
-	const performanceData = data.data ? data.data.data.data : "";
-	const kind = data.data ? data.data.data.kind : "";
+	const performanceData = data.data.data ? data.data.data.data : "";
+	const kind = data.data.data ? data.data.data.kind : "";
 
 	/**
 	 * dataArray stock the useful elements of 'performanceData' and 'kind' varaiables
@@ -27,11 +27,11 @@ const Performance = (data) => {
 	if (performanceData) {
 		for (let i in kind) {
 			// eslint-disable-next-line array-callback-return
-			performanceData.map((k) => {
+			performanceData.map((d) => {
 				// eslint-disable-next-line eqeqeq
-				if (i == k.kind) {
+				if (i == d.kind) {
 					dataArray.push({
-						value: k.value,
+						value: d.value,
 						kind: i,
 						label: kind[i],
 					});
@@ -61,7 +61,7 @@ const Performance = (data) => {
 };
 
 Performance.propTypes = {
-	data: PropTypes.any.isRequired
+	data: PropTypes.object.isRequired
 }
 
 export default Performance;

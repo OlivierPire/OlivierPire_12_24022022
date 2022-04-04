@@ -1,12 +1,12 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types'
 import Message from './Message';
 import Name from './Name';
 
 /**
- * Show name of the user with the encouragement message 
- * @param {any} data main data
- * @returns {ReactElement} name and message
+ * Show user name with the encouragement message 
+ * @param {object} data main data
+ * @returns {React.ReactElement} name and message
  */
 
 const Header = (data) => {
@@ -19,7 +19,7 @@ const Header = (data) => {
 };
 
 Header.propTypes = {
-    data: PropTypes.any.isRequired
+    data: PropTypes.object.isRequired
 }
 
 export default Header;
