@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/OlivierPire_12_24022022/static/css/main.d62f97a2.css",
+    "main.js": "/OlivierPire_12_24022022/static/js/main.822e2ef5.js",
+    "index.html": "/OlivierPire_12_24022022/index.html",
+    "main.d62f97a2.css.map": "/OlivierPire_12_24022022/static/css/main.d62f97a2.css.map",
+    "main.822e2ef5.js.map": "/OlivierPire_12_24022022/static/js/main.822e2ef5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d62f97a2.css",
+    "static/js/main.822e2ef5.js"
+  ]
+}
