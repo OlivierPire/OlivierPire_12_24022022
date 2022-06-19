@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const NavigationTop = () => {
 
@@ -9,7 +10,7 @@ const NavigationTop = () => {
     return (
         <div className='navigation-top'>
             <ul>
-                <li>Accueil</li>
+                <NavLink to="/"><li>Accueil</li></NavLink>
                 <li>Profil</li>
                 <li>Réglage</li>
                 <li>Communauté</li>

@@ -1,6 +1,6 @@
+// @ts-nocheck
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
 import NavbarTop from "../Components/Navbar/NavbarTop";
 import NavbarLeft from "../Components/Navbar/NavbarLeft";
 import Header from "../Components/Header/Header";
@@ -24,6 +24,7 @@ const Home = (access) => {
 	const [activityData, setActivityData] = useState({});
 	const [averageSessions, setAverageSessions] = useState({});
 	const [performanceData, setPerformanceData] = useState({});
+	
 	const { id } = useParams();
 	const userId = id;
 	const navigate = useNavigate();
@@ -34,6 +35,7 @@ const Home = (access) => {
 		if (id == 12 || id == 18) {
 			getAllDatas(userId).then(
 				([activities, mainData, averageSessions, performanceData]) => {
+					console.log("a");
 					setActivityData(activities.data);
 					setMainData(mainData.data);
 					setAverageSessions(averageSessions.data);

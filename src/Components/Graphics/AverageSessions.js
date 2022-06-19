@@ -28,7 +28,7 @@ const AverageSessions = (data) => {
 	/**
 	 * This function allow change the style of graphic tooltip, and add a paragraph for time of sessions, payload corresponds to "averageSessions"
 	 * @param {any} payload is "averageSessions" variable
-	 * @returns { ReactElement | null } time of sessions with units (min)
+	 * @returns { React.ReactElement | null } time of sessions with units (min)
 	 */
 
 	const TooltipStyle = ({ payload }) => {

@@ -19,6 +19,7 @@ import {
 
 const Activities = (data) => {
 	const activity = data.data.data ? data.data.data.sessions : "";
+	
 	const legendStyle = {
 		position: "absolute",
 		top: "22px",
@@ -28,7 +29,7 @@ const Activities = (data) => {
 	/**
 	 * This function allow change the style of graphic tooltip, payload corresponds to "activity"
 	 * @param {any} payload is "activity" variable
-	 * @returns { ReactElement | null} calories and weight with units or null
+	 * @returns { React.ReactElement | null} calories and weight with units or null
 	 */
 
 	const TooltipStyle = ({ payload }) => {
